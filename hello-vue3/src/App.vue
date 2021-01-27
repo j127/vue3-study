@@ -1,15 +1,21 @@
 <template>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Hello Vue 3.0 + Vite" />
+    <Navbar :siteName="siteName" />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import { siteName } from "./config";
+import Navbar from "./components/Navbar.vue";
 
+console.log("siteName", siteName);
 export default {
     name: "App",
     components: {
-        HelloWorld,
+        Navbar,
+    },
+    data() {
+        return {
+            siteName,
+        };
     },
 };
 </script>
